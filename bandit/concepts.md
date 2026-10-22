@@ -51,4 +51,27 @@ ls -la
 
 ---
 
+## Special filenames: `-`
+
+- For many commands, `-` means **stdin** (read from the keyboard), not a file.
+- `cat -` waits for input → exit with `Ctrl + C`.
+- Quotes do not help: the shell removes them before the command sees the argument.
+- `--` (end of options) does **not** help with `cat` either, because `-` is still treated as stdin.
+- Fix: refer to the file with a **path**, so the argument is not a bare `-`.
+
+## Absolute vs relative paths
+
+| Path type | Example | Starts from |
+|---|---|---|
+| Absolute | `/home/user/file` | Root `/` |
+| Relative | `./file` | Current directory `.` |
+| Home shortcut | `~/file` | The user's home directory |
+
+- A trailing `/` means a **directory** → `cat file/` fails with "Not a directory".
+- Security use: attackers use strange filenames to hide files or confuse commands; analysts must read them safely.
+
+> An absolute path starts from the root directory; a relative path starts from the current directory.
+
+---
+
 <!-- Add a new section each time I learn a new concept -->

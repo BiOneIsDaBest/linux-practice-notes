@@ -12,7 +12,7 @@ ssh banditX@bandit.labs.overthewire.org -p 2220
 |---|---|---|---|---|
 | 0 | ✅ Done | SSH login on a custom port | `ssh -p` | 2026-10-23 |
 | 0 → 1 | ✅ Done | Reading files, hidden files, file permissions | `ls -la`, `cat` | 2026-10-23 |
-| 1 → 2 | ⬜ | | | |
+| 1 → 2 | ✅ Done | Dashed filename, stdin, absolute vs relative paths | `cat ./<file>` | 2026-10-23 |
 | 2 → 3 | ⬜ | | | |
 | 3 → 4 | ⬜ | | | |
 | 4 → 5 | ⬜ | | | |
