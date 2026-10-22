@@ -24,4 +24,31 @@ ssh <user>@<host> -p <port>
 
 ---
 
+## Listing files and reading permissions
+
+```bash
+ls -la
+```
+
+- `-l` = long format (permissions, owner, group, size, date)
+- `-a` = show **hidden files** (names starting with `.`)
+
+```text
+-rw-r-----  1 bandit1 bandit0  438  readme
+```
+
+| Part | Meaning |
+|---|---|
+| `-` | Regular file (`d` = directory) |
+| `rw-` | Owner can read and write |
+| `r--` | Group can read |
+| `---` | Others have no access |
+
+- I can read a file if I am the owner, **or in the group**, or if "others" has read permission.
+- Security use: wrong permissions on sensitive files are a common misconfiguration and a path to privilege escalation.
+
+> Linux file permissions control who can read, write or execute a file.
+
+---
+
 <!-- Add a new section each time I learn a new concept -->
