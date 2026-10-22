@@ -1,0 +1,7 @@
+# Never commit level passwords or private keys
+passwords*.txt
+*.key
+*_rsa
+*.pem
+.DS_Store
+Thumbs.db
