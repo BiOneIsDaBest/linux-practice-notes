@@ -74,4 +74,48 @@ ls -la
 
 ---
 
+## Spaces in filenames and `--`
+
+The shell splits arguments on spaces, so `cat my file` means two files: `my` and `file`.
+
+| Method | Example |
+|---|---|
+| Quotes | `cat "my file"` |
+| Backslash escape | `cat my\ file` |
+| Tab completion | Type `cat my` + `Tab` → the shell escapes it for me |
+
+If a filename **starts with `-`**, the command may treat it as an **option**:
+
+```bash
+cat ./"--my file--"     # add a path in front
+cat -- "--my file--"    # `--` = end of options, everything after is a filename
+```
+
+- Running `cat` with no file also reads **stdin** (same as `cat -`).
+
+---
+
+## Hidden files and directories
+
+- Any name starting with `.` is hidden from plain `ls` (e.g. `.bashrc`, `...Hiding-From-You`).
+- Always use `ls -la` when investigating a directory, and check subdirectories too.
+- Security use: attackers often hide tools or data in dot-files and dot-directories.
+
+---
+
+## Identifying file types with `file`
+
+```bash
+file ./*
+```
+
+- `file` checks the **content** of a file, not its name or extension.
+- Output examples: `ASCII text` (readable), `data` (unknown binary).
+- Do not `cat` unknown binary files: they can break the terminal display. Fix with `reset`.
+- Security use: analysts check file types first (`file` → `strings` → deeper tools), because malware often uses fake extensions.
+
+> The `file` command identifies a file's type from its content, not its extension.
+
+---
+
 <!-- Add a new section each time I learn a new concept -->

@@ -9,3 +9,7 @@ Only commands I have run myself during practice are added here.
 | `ls -la` | List all files, including hidden ones, with permissions | `ls -la` | Bandit 0 → 1 |
 | `cat` | Print a file's contents | `cat readme` | Bandit 0 → 1 |
 | `cat ./<file>` | Read a file with a special name using a relative path | `cat ./-` | Bandit 1 → 2 |
+| `pwd` | Show the current directory | `pwd` | Bandit 2 → 3 |
+| `du` | Show disk usage of a directory | `du` | Bandit 2 → 3 |
+| `\` (escape) | Treat the next character (e.g. a space) as part of the name | `cat my\ file` | Bandit 2 → 3 |
+| `cd` | Change directory | `cd inhere/` | Bandit 3 → 4 |
